@@ -17,9 +17,9 @@
     (CACHE_LINE_SIZE * ((size + CACHE_LINE_SIZE - 1)/ CACHE_LINE_SIZE))
 
 // 设置内存屏障
-#define smp_rmb()   asm volatile("lfence":::"memory");
-#define smp_mb()   asm volatile("mfence":::"memory");
-#define smp_wmb()   asm volatile("sfence":::"memory");
+#define smp_rmb()   asm volatile("lfence":::"memory")
+#define smp_mb()   asm volatile("mfence":::"memory")
+#define smp_wmb()   asm volatile("sfence":::"memory")
 
 // Linux内核中定义根本结构成员取结构首地址的宏，只可用于GCC
 #define container_of(ptr, type, member) ({			\
