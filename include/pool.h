@@ -12,7 +12,7 @@ typedef struct pool {
 
     pool_size_t         num;
     pool_size_t         free_idx;
-    pool_size_t         *freeobj;
+    pool_size_t         *freeobj;   // pointer the first free obj
 
     void *obj;
     char buffer[0];
@@ -29,7 +29,7 @@ pool_t *pool_create(pool_obj_size_t objsize, pool_size_t poolsize);
 void pool_destory(pool_t *p);
 
 void *pool_alloc_obj(pool_t *p);
-void *pool_free_ojb(pool_t *p, void *obj);
+void *pool_free_obj(pool_t *p, void *obj);
 
 
 #endif
