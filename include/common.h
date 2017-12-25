@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <sys/epoll.h>
+#include <stdint.h>
 
 // check weather if x is power of 2
 #define POWEROF2(x) ((((x) -1) & (x)) == 0)

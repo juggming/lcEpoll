@@ -19,8 +19,8 @@ typedef struct htable {
 
 
 uint32_t htable_defaut_hash(htable_key_t key, size_t len);
-htable_t htable_create(int size, htable_cmp_t cmp, htable_hash_t hash);
-void htable_destory(htable_t *ht);
+htable_t *htable_create(int size, htable_cmp_t cmp, htable_hash_t hash);
+void htable_destroy(htable_t *ht);
 
 list_head_t *htable_find(htable_t *ht, htable_key_t key);
 void htable_delete(htable_t *ht, htable_key_t key);

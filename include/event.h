@@ -45,7 +45,7 @@ typedef struct ev_context {
 
 ev_context_t *ev_create_context(int max_events);
 
-void ev_destory_context(ev_context_t *ptr_context);
+void ev_destroy_context(ev_context_t *ptr_context);
 
 int ev_run(ev_context_t *ptr_context);
 

@@ -26,10 +26,10 @@ typedef struct pool_obj_head {
 /* APIs declare here*/
 
 pool_t *pool_create(pool_obj_size_t objsize, pool_size_t poolsize);
-void pool_destory(pool_t *p);
+void pool_destroy(pool_t *p);
 
 void *pool_alloc_obj(pool_t *p);
-void *pool_free_obj(pool_t *p, void *obj);
+void pool_free_obj(pool_t *p, void *obj);
 
 
 #endif
