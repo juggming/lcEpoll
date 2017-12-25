@@ -38,7 +38,7 @@ static inline int64_t run_timers(list_head_t *timer_list)
 }
 
 
-void ev_destory_context(ev_context_t *c)
+void ev_destroy_context(ev_context_t *c)
 {
     close(c->efd);
     free(c);
