@@ -11,6 +11,7 @@
 // check weather if x is power of 2
 #define POWEROF2(x) ((((x) -1) & (x)) == 0)
 
+#define CACHE_LINE_SIZE     64
 #define CACHE_LINE_MASK     (CACHE_LINE_SIZE - 1)
 
 // 向上取整
