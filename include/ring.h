@@ -11,7 +11,7 @@ typedef struct ring {
     unsigned int        mask;
     volatile unsigned int   head;
     volatile unsigned int   tail;
-    void *volatile ring[0] __cache_aligned;
+    void *volatile ring[0];
 } ring_t;
 
 
@@ -73,6 +73,7 @@ static inline bool ring_enqueue(ring_t *r, void *data)
         return false;
 
     r->ring[r->head] = data;
+    // stolen from kernel.
     smp_wmb();
     r->head = (r->head + 1) & r->mask;
 

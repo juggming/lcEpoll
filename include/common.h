@@ -18,7 +18,7 @@
 #define CACHE_LINE_ROUNDUP(size) \
     (CACHE_LINE_SIZE * ((size + CACHE_LINE_SIZE - 1)/ CACHE_LINE_SIZE))
 
-// 设置内存屏障
+// 设置内存屏障,取自内核
 #define smp_rmb()   asm volatile("lfence":::"memory")
 #define smp_mb()   asm volatile("mfence":::"memory")
 #define smp_wmb()   asm volatile("sfence":::"memory")
