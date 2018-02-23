@@ -74,7 +74,6 @@ static inline bool ring_enqueue(ring_t *r, void *data)
 
     r->ring[r->head] = data;
     // stolen from kernel.
-    smp_wmb();
     r->head = (r->head + 1) & r->mask;
 
     return true;

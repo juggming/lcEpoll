@@ -18,10 +18,6 @@
 #define CACHE_LINE_ROUNDUP(size) \
     (CACHE_LINE_SIZE * ((size + CACHE_LINE_SIZE - 1)/ CACHE_LINE_SIZE))
 
-// 设置内存屏障,取自内核
-#define smp_rmb()   asm volatile("lfence":::"memory")
-#define smp_mb()   asm volatile("mfence":::"memory")
-#define smp_wmb()   asm volatile("sfence":::"memory")
 
 // Linux内核中定义根本结构成员取结构首地址的宏，只可用于GCC
 #define container_of(ptr, type, member) ({			\
@@ -31,10 +27,6 @@
 #define likely(x)       __builtin_expect(!!(x), 1)
 #define unlikely(x)     __builtin_expect(!!(x), 0)
 
-#define atomic_compare_and_swap     __sync_bool_compare_and_swap
-#define atomic_add                  __sync_fetch_and_add
-#define atomic_sub                  __sync_fetch_and_sub
-#define compile_barrier()           asm volatile("":::"memory");
 
 typedef int socket_t;
 typedef uint32_t ip_addr_t;
